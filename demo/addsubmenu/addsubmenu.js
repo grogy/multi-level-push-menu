@@ -15,17 +15,8 @@ $(document).ready(function(){
 	// Add submenu after click to menu element
 	$( '.add-submenu' ).click(function(){
 		menuID = $(this).data('id');
-		console.log(menuID);
 		var $addTo = $( '#menu' ).multilevelpushmenu( 'finditemsbydataattribute' , 'id', menuID ).first();
-		console.log($addTo);
 		$( '#menu' ).multilevelpushmenu( 'addsubmenuitems' , addItems , $addTo , 0 );
-
-
-		/*$( '#menu' ).multilevelpushmenu({
-			containersToPush: [$( '#pushobj' )],
-			wrapperClass: 'mlpm_w',
-			menuInactiveClass: 'mlpm_inactive'
-		});*/
 	});
 
 	/*// Add iPhone and Samsung items

@@ -1079,23 +1079,11 @@
 				return $this;
 			}
 
-			// Add item(s)
+			// Add item(s) to submenu
 			function addSubmenuItems() {
-				var items = arguments[0],
-					$levelHolder = arguments[1],
-					position = arguments[2];
-				if( $levelHolder == undefined || typeof items != 'object' || !$levelHolder ) return false;
-				if( items.level == undefined ) items.level = parseInt( $levelHolder.attr( 'data-level' ) , 10 );
-				if( position == undefined ) position = 0;
-				$levelHolder.append('<div class="levelHolderClass ltr"><h2>Test..</h2><ul></ul></div>');
-				var $itemGroup = $levelHolder.find( 'ul:first' );
-				$.each(items, function() {
-					if( this.name != undefined )
-						createItem( this, $levelHolder, position );
-				});
-				sizeDOMelements( instance.menuWidth );
-				//initialize();
-				//updateDOMStructure();
+				var position = arguments[1].closest('div.levelHolderClass').first();
+				addItems(arguments[0], position, arguments[2]);
+				removeItems(arguments[1]);
 				return $this;
 			}
 
