@@ -16,31 +16,20 @@ $(document).ready(function(){
 	$( '.add-submenu' ).click(function(){
 		menuID = $(this).data('id');
 		var $addTo = $( '#menu' ).multilevelpushmenu( 'finditemsbydataattribute' , 'id', menuID ).first();
-		$( '#menu' ).multilevelpushmenu( 'addsubmenuitems' , addItems , $addTo , 0 );
+		console.log(addItems[menuID-1]);
+		$( '#menu' ).multilevelpushmenu( 'addsubmenuitems' , addItems[menuID-1] , $addTo , 0 );
 	});
-
-	/*// Add iPhone and Samsung items
-	$( '#additems' ).click(function(){
-		var $addTo = $( '#menu' ).multilevelpushmenu( 'findmenusbytitle' , 'Mobile Phones' ).first();
-		$( '#menu' ).multilevelpushmenu( 'additems' , addItems , $addTo , 0 );
-	})
-
-	// Remove Samsung items
-	$( '#removeitems' ).click(function(){
-		var item = $( '#menu' ).multilevelpushmenu( 'finditemsbyname' , 'Samsung' );
-		$( '#menu' ).multilevelpushmenu( 'removeitems' , item );
-	})*/
 
 });
 
 var addItems = [
-	{
-		name: 'iPhone',
+	[{
+		name: 'Super Smart Phone',
 		icon: 'fa fa-phone-square',
 		link: '#',
 		items: [
 			{
-				title: 'iPhones',
+				title: 'Super Smart Phone',
 				icon: 'fa fa-phone-square',
 				items: [
 					{
@@ -52,18 +41,28 @@ var addItems = [
 						name: 'iPhone 5',
 						icon: 'fa fa-phone-square',
 						link: '#'
+					},
+					{
+						name: 'iPhone 6',
+						icon: 'fa fa-phone-square',
+						link: '#'
+					},
+					{
+						name: 'iPhone 6 Plus',
+						icon: 'fa fa-phone-square',
+						link: '#'
 					}
 				]
 			}
 		]
-	},
-	{
-		name: 'Samsung',
+	}],
+	[{
+		name: 'Thin Magic Mobile',
 		icon: 'fa fa-phone-square',
 		link: '#',
 		items: [
 			{
-				title: 'Samsung',
+				title: 'Thin Magic Mobile',
 				icon: 'fa fa-phone-square',
 				items: [
 					{
@@ -84,5 +83,61 @@ var addItems = [
 				]
 			}
 		]
-	}
+	}],
+	[{
+		name: 'Performance Crusher',
+		icon: 'fa fa-phone-square',
+		link: '#',
+		items: [
+			{
+				title: 'Performance Crusher',
+				icon: 'fa fa-phone-square',
+				items: [
+					{
+						name: 'Samsung Galaxy S II',
+						icon: 'fa fa-phone-square',
+						link: '#'
+					},
+					{
+						name: 'Samsung Galaxy S III',
+						icon: 'fa fa-phone-square',
+						link: '#'
+					},
+					{
+						name: 'Samsung Galaxy S IV',
+						icon: 'fa fa-phone-square',
+						link: '#'
+					}
+				]
+			}
+		]
+	}],
+	[{
+		name: 'Futuristic Experience',
+		icon: 'fa fa-phone-square',
+		link: '#',
+		items: [
+			{
+				title: 'Futuristic Experience',
+				icon: 'fa fa-phone-square',
+				items: [
+					{
+						name: 'Samsung Galaxy S II',
+						icon: 'fa fa-phone-square',
+						link: '#'
+					},
+					{
+						name: 'Samsung Galaxy S III',
+						icon: 'fa fa-phone-square',
+						link: '#'
+					},
+					{
+						name: 'Samsung Galaxy S IV',
+						icon: 'fa fa-phone-square',
+						link: '#'
+					}
+				]
+			}
+		]
+	}]
 ];
