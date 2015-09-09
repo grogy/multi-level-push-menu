@@ -16,10 +16,13 @@ $(document).ready(function(){
 	$( '.add-submenu' ).click(function(){
 		menuID = $(this).data('id');
 		var $addTo = $( '#menu' ).multilevelpushmenu( 'finditemsbydataattribute' , 'id', menuID ).first();
-		console.log(addItems[menuID-1]);
 		$( '#menu' ).multilevelpushmenu( 'addsubmenuitems' , addItems[menuID-1] , $addTo , 0 );
+		//$(this).parent('ul li:eq(' + $(this).parent('li').index() + ')').after();
+		var li = $(this).parent('ul li:eq(0)');
+		$(this).parent('li').remove();
+		$(this).parent('ul li:eq(0)').remove();
+		$(this).parent('ul li:eq(2)').after(li);
 	});
-
 });
 
 var addItems = [

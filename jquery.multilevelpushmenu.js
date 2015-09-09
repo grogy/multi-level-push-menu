@@ -1083,7 +1083,6 @@
 			function addSubmenuItems() {
 				var position = arguments[1].closest('div.levelHolderClass').first();
 				addItems(arguments[0], position, arguments[2]);
-				removeItems(arguments[1]);
 				expandMenu(arguments[1].text().trim());
 				return $this;
 			}
